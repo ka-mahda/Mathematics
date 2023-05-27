@@ -2,6 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,js}","./index.html"],
   theme: {
+    colors:{
+      'LemonChiffon': '#FEF5AC',
+      'SkyBlue': '#97D2EC',
+      'SlateBlue':'#5F6F94',
+      'DarkBlue':'#25316D'
+    },
     extend: {},
   },
   corePlugins: {
