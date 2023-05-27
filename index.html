@@ -9,27 +9,64 @@
 </head>
 
 <body>
-  <main class="container mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-    <div class="flex flex-wrap justify-between">
-      <div class="w-full md:w-1/3 p-4">
+  <header class="flex justify-between h-16 w-full shadow-md">
+    <figure class="m-2">
+      <img src="./assets/logo/logo.png" alt="logo" class="h-full" />
+    </figure>
+    <div class="invisible md:visible m-2 flex justify-start text-SlateBlue hover:text-DarkBlue">
+      <a class="p-2 hover:text-DarkBlue hover:font-bold" href="https://github.com/ka-mahda" target="_blank">
+        Find-me
+      </a>
+      <a class="p-2 hover:text-DarkBlue hover:font-bold">Mission</a>
+    </div>
+  </header>
+  <main class="container mx-auto md:absolute top-1/2 left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2">
+    <div class="flex flex-wrap justify-around">
+      <div class="w-full md:w-1/3 p-4 relative">
         <figure>
-          <img src="./assets/volodymy.jpg" alt="Image" class="w-full h-auto">
+          <img src="./assets/volodymy.jpg" alt="Image"
+            class="w-full h-auto md:absolute md:top-1/2 md:transform md:-translate-y-1/2">
         </figure>
       </div>
-      <div class="w-full md:w-2/3 p-4">
-        <article>
-          <h2 class="text-2xl font-bold mb-4">Mathematics Made Easy: Calculators, Graphing, and More!</h2>
-          <p class="mb-4">Welcome to our mathematics website! Whether you're a student, a teacher, or just someone who loves numbers, we've got you covered. Our website features a simple and engineering calculator that can help you solve all kinds of mathematical problems. Need to draw a line on the coordinate plane? No problem! Just input the equation and watch it appear before your eyes.
-
-            But that's not all. We also have tools for working with lists of numbers and matrices. Perform various mathematical operations on them with ease and efficiency. And if you ever get stuck, don't worry - our website is designed to be user-friendly and intuitive.
-            
-            So what are you waiting for? Click the button below to explore our website and discover all the amazing features we have to offer. From the basics to the advanced, we've got everything you need to succeed in mathematics.</p>
-          <button>click me</button>
+      <div class="w-full md:w-2/4 p-4">
+        <article class="bg-SkyBlue p-8 rounded-2xl md:p-4 lg:p-8">
+          <h2 class="text-2xl font-bold mb-4 text-DarkBlue md:text-lg lg:text-2xl">Mathematics Made Easy: Calculators,
+            Graphing, and More!</h2>
+          <p class="mb-6 text-DarkBlue text-justify md:text-base lg:text-xl">Welcome to our mathematics website!<br />
+            Whether you're a student, teacher or just love numbers, we've got you covered. Our user-friendly platform
+            features a simple calculator and tools for working with lists of numbers and matrices. From the basics to
+            the advanced, we have everything you need to succeed in mathematics.<br /> Click below to explore our
+            amazing features and start solving problems with ease!</p>
+          <button id="modal-button"
+            class="bg-LemonChiffon text-SkyBlue font-bold py-2 px-4 block m-auto rounded focus:outline-none focus:shadow-outline">Learn
+            More</button>
+          <dialog id="modal" class="bg-white rounded-md p-4">
+            <button id="close-button" class="absolute top-0 right-0 mt-2 mr-2">&times;</button>
+            <nav>
+              <ul>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+              </ul>
+            </nav>
+          </dialog>
         </article>
       </div>
     </div>
   </main>
-
+  <!-- <script>
+    const modalButton = document.getElementById('modal-button');
+    const modal = document.getElementById('modal');
+    const closeButton = document.getElementById('close-button');
+  
+    modalButton.addEventListener('click', () => {
+      modal.open = true;
+    });
+  
+    closeButton.addEventListener('click', () => {
+      modal.open = false;
+    });
+  </script> -->
 </body>
 
 </html>
