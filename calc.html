@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" type="text/css" href="./dist/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.4/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+</head>
+
+<body class="flex flex-col">
+    <header class="flex justify-between h-16 w-full shadow-md bg-white">
+        <figure class="m-2">
+            <img src="./assets/logo/logo.png" alt="logo" class="h-full" />
+        </figure>
+        <div class="hidden md:m-2 md:flex md:justify-start text-SlateBlue hover:text-DarkBlue">
+            <a class="p-2 hover:text-DarkBlue hover:font-bold" href="https://github.com/ka-mahda" target="_blank">
+                Find-me
+            </a>
+            <a class="p-2 hover:text-DarkBlue hover:font-bold" href="#" id="mission">Our Mission</a>
+        </div>
+    </header>
+    <main class="h-full bg-gradient-to-br from-SkyBlue via-SlateBlue to-DarkBlue">
+        <!-- title and radio -->
+        <section class="w-3/4 m-auto text-center">
+            <p class="text-LemonChiffon text-lg my-2">You can choose between our simple and engineering calculator to
+                perform your calculations.<br /> Use the items below to choose between the calculators and get started.
+            </p>
+            <div class="m-auto text-center mb-2">
+                <input type="radio" name="calculatorType" value="simple" checked> Simple calculator
+                <input type="radio" name="calculatorType" value="engineering"> Engineering calculator
+            </div>
+        </section>
+        <!-- simple calculator -->
+        <section class="calculator rounded-xl w-80 h-128 m-auto shadow-md" id="simpleCalc">
+            <div class="w-full h-1/5 bg-LemonChiffon rounded-t-3xl screen"><input type="text" id="result" disabled class="w-full h-full bg-transparent border-none"></div>
+            <div class="bg-white w-full h-4/5 rounded-b-3xl">
+                <div class="p-6">
+                    <!-- first row of simple calculator -->
+                    <div class="flex justify-between w-full p-3">
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="clearResult()">C</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="clearResult()">&plusmn;</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="backspace()">&#x232b;</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('/')">&divide;</button>
+                    </div>
+                    <!-- second row of simple calculator -->
+                    <div class="flex justify-between w-full p-3">
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('7')">7</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('8')">8</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('9')">9</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('*')">&times;</button>
+                    </div>
+                    <!-- third row of simple calculator -->
+                    <div class="flex justify-between w-full p-3">
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('4')">4</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('5')">5</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('6')">6</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('-')">-</button>
+                    </div>
+                    <!-- fourth row of simple calculator -->
+                    <div class="flex justify-between w-full p-3">
+                       <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('1')">1</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('2')">2</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('3')">3</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('+')">+</button>
+                    </div>
+                    <!-- fifth row of simple calculator -->
+                    <div class="flex justify-between w-full p-3">
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('0')">0</button>
+                        <button class="shadow-md rounded-full bg-SkyBlue aspect-square w-1/5" style="aspect-ratio: 1/1;" onclick="calculate('.')">.</button>
+                        <button class="shadow-md rounded-3xl bg-SkyBlue aspect-square w-2/5" style="aspect-ratio: 2/1;" onclick="calculate('=')">=</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- engineering calculator -->
+        <section id="engineeringCalc"></section>
+    </main>
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/home.js"></script>
+    <script src="./js/calc.js"></script>
+</body>
+
+</html>

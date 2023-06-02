@@ -1,3 +1,4 @@
+// our mission modal
 document.getElementById("mission").addEventListener("click", function () {
   Swal.fire({
     title: '<span class="text-SlateBlue" style="font-size:clamp(18px, 2vw, 30px)">Why Mathematics Site?</span>',
@@ -16,12 +17,13 @@ document.getElementById("mission").addEventListener("click", function () {
   });
 });
 
+// select sections modal
 const modalButton = document.getElementById('modal-button');
 
 modalButton.addEventListener('click', function() {
   Swal.fire({
     title: '<span class="text-SlateBlue">go to...</span>',
-    html: '<form action="/action_page.php" class="bg-SlateBlue rounded-md p-1 inline-block mb-2"><input type="text" placeholder="Search..." name="search" class="bg-SlateBlue placeholder-DarkBlue border-2 border-DarkBlue !important"/><button type="submit" class="p-2 text-SlateBlue m-2 !important" style="border-left:2px solid white;" onmouseover="this.style.color=\'#FCE5CD\'" onmouseout="this.style.color=\'#5F6F94\'"  onfocus="this.style.color=\'white\'">find!</button></form><div><ul style="margin-top:16px"><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="./calculator.html" class="m-1 p-2 text-SlateBlue">calculator</a></li><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="#" class="m-1 p-2 text-SlateBlue">matrices</a></li><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="#" class="m-1 p-2 text-SlateBlue">equation</a></li><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="#" class="m-1 p-2 text-SlateBlue">line</a></li><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="#" class="m-1 p-2 text-SlateBlue">list</a></li></ul></div>',
+    html: '<form action="/action_page.php" class="bg-SlateBlue rounded-md p-1 inline-block mb-2"><input type="text" placeholder="Search..." name="search" class="bg-SlateBlue placeholder-DarkBlue border-2 border-DarkBlue !important"/><button type="submit" class="p-2 text-SlateBlue m-2 !important" style="border-left:2px solid white;" onmouseover="this.style.color=\'#FCE5CD\'" onmouseout="this.style.color=\'#5F6F94\'"  onfocus="this.style.color=\'white\'">find!</button></form><div><ul style="margin-top:16px"><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="./calc.html" class="m-1 p-2 text-SlateBlue">calculator</a></li><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="#" class="m-1 p-2 text-SlateBlue">matrices</a></li><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="#" class="m-1 p-2 text-SlateBlue">equation</a></li><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="#" class="m-1 p-2 text-SlateBlue">line</a></li><li class="mt-2 p-2" style="margin-top:8px; background-color: #FFF" onmouseover="this.style.backgroundColor=\'#FFF5D7\'" onmouseout="this.style.backgroundColor=\'#FFF\'"><a href="#" class="m-1 p-2 text-SlateBlue">list</a></li></ul></div>',
     background: "#25316D",
     backdrop: "rgba(151,210,236,0.4)",
     showConfirmButton: false,
@@ -39,4 +41,5 @@ modalButton.addEventListener('click', function() {
     }
   });
 });
+
 
