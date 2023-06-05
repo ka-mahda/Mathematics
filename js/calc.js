@@ -121,7 +121,15 @@ function calculate(value) {
     equation += value;
     result.value = equation;
 
-  } else {
+  }else {
+    // Check if the value is an operator
+    if ("+-*/^".includes(value)) {
+      // Remove any existing operators from the end of the equation
+      while ("+-*/^".includes(equation.slice(-1))) {
+        equation = equation.slice(0, -1);
+      }
+    }
+
     equation += value;
     result.value = equation;
   }
