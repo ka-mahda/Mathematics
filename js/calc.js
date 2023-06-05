@@ -11,6 +11,14 @@ let equation = "";
  * If the key is the enter key or equals sign, it calls the `calculate()` function with the equals sign as an argument.
  */
 document.addEventListener("keydown", function (event) {
+ // Check if the pressed key is an F1-F12 key
+  if (event.key.startsWith("F") && !isNaN(Number(event.key.slice(1)))) {
+    // Prevent the default action of the function key
+    event.preventDefault();
+    // Do not update the result or perform any other actions
+    return;
+  }
+  // Checks the key pressed and calls the appropriate function based on the key
   if (/\d/.test(event.key)) {
     // check if key is a number
     calculate(event.key);
@@ -30,6 +38,7 @@ document.addEventListener("keydown", function (event) {
     calculate("=");
   }
 });
+
 // clear functions
 /**
  * Removes the last character from the equation and updates the result field.
@@ -120,8 +129,7 @@ function calculate(value) {
 
     equation += value;
     result.value = equation;
-
-  }else {
+  } else {
     // Check if the value is an operator
     if ("+-*/^".includes(value)) {
       // Remove any existing operators from the end of the equation
