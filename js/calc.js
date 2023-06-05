@@ -1,4 +1,4 @@
-// simple calc
+// simple calculator
 
 let result = document.getElementById("result");
 let equation = "";
@@ -11,7 +11,7 @@ let equation = "";
  * If the key is the enter key or equals sign, it calls the `calculate()` function with the equals sign as an argument.
  */
 document.addEventListener("keydown", function (event) {
- // Check if the pressed key is an F1-F12 key
+  // Check if the pressed key is an F1-F12 key
   if (event.key.startsWith("F") && !isNaN(Number(event.key.slice(1)))) {
     // Prevent the default action of the function key
     event.preventDefault();
@@ -142,3 +142,20 @@ function calculate(value) {
     result.value = equation;
   }
 }
+
+// engineering calculator
+const basicCalculatorRadio = document.getElementById("basicCalculator");
+const engineeringCalculatorRadio = document.getElementById("engineeringCalculator");
+const engineeringCalculatorDisplay = document.getElementById("engineeringCalculatorDisplay");
+
+engineeringCalculatorRadio.addEventListener("change", function () {
+  if (engineeringCalculatorRadio.checked) {
+    engineeringCalculatorDisplay.classList.remove("hidden");
+  }
+});
+
+basicCalculatorRadio.addEventListener("change", function () {
+  if (basicCalculatorRadio.checked) {
+    engineeringCalculatorDisplay.classList.add("hidden");
+  }
+});

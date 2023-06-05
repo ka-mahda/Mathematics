@@ -30,74 +30,165 @@
                 perform your calculations.<br /> Use the items below to choose between the calculators and get started.
             </p>
             <div class="m-auto text-center mb-2">
-                <input type="radio" name="calculatorType" value="simple" checked> Simple calculator
-                <input type="radio" name="calculatorType" value="engineering"> Engineering calculator
+                <input type="radio" name="calculatorType" id="basicCalculator" class="mr-2" checked>
+                <label for="basicCalculator">Basic Calculator</label>
+
+                <input type="radio" name="calculatorType" id="engineeringCalculator" class="mr-2">
+                <label for="engineeringCalculator">Engineering Calculator</label>
             </div>
         </section>
-        <!-- simple calculator -->
-        <section class="calculator rounded-xl w-80 h-128 m-auto shadow-md" id="simpleCalc">
-            <div class="w-full h-1/5 bg-LemonChiffon rounded-t-3xl screen"><input type="text" id="result" disabled
-                    class="w-full h-full bg-transparent border-none"></div>
-            <div class="bg-white w-full h-4/5 rounded-b-3xl">
-                <div class="p-6">
-                    <!-- first row of simple calculator -->
-                    <div class="flex justify-between w-full p-3">
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="clearResult()">C</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="toggleSign()">&plusmn;</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="backspace()">&#x232b;</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('/')">&divide;</button>
-                    </div>
-                    <!-- second row of simple calculator -->
-                    <div class="flex justify-between w-full p-3">
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('7')">7</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('8')">8</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('9')">9</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('*')">&times;</button>
-                    </div>
-                    <!-- third row of simple calculator -->
-                    <div class="flex justify-between w-full p-3">
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('4')">4</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('5')">5</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('6')">6</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('-')">-</button>
-                    </div>
-                    <!-- fourth row of simple calculator -->
-                    <div class="flex justify-between w-full p-3">
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('1')">1</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('2')">2</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('3')">3</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('+')">+</button>
-                    </div>
-                    <!-- fifth row of simple calculator -->
-                    <div class="flex justify-between w-full p-3">
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('0')">0</button>
-                        <button class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
-                            style="aspect-ratio: 1/1;" onclick="calculate('.')">.</button>
-                        <button class="shadow-md rounded-3xl bg-SkyBlue hover:-translate-y-1 duration-500 ease-in" style="width: 46.667%;"
-                            onclick="calculate('=')">=</button>
+        <div class="flex justify-center items-end">
+            <!-- simple calculator -->
+            <section class="calculator rounded-xl w-80 h-128 m-0 shadow-2xl" id="simpleCalc">
+                <div class="w-full h-1/5 bg-LemonChiffon rounded-t-3xl screen">
+                    <input type="text" id="result" disabled class="w-full h-full bg-transparent border-none">
+                </div>
+                <div class="bg-white w-full h-4/5 rounded-b-3xl shadow-2xl">
+                    <div class="p-6">
+                        <!-- first row of simple calculator -->
+                        <div class="flex justify-between w-full p-3">
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="clearResult()">C</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="toggleSign()">&plusmn;</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="backspace()">&#x232b;</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('/')">&divide;</button>
+                        </div>
+                        <!-- second row of simple calculator -->
+                        <div class="flex justify-between w-full p-3">
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('7')">7</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('8')">8</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('9')">9</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('*')">&times;</button>
+                        </div>
+                        <!-- third row of simple calculator -->
+                        <div class="flex justify-between w-full p-3">
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('4')">4</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('5')">5</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('6')">6</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('-')">-</button>
+                        </div>
+                        <!-- fourth row of simple calculator -->
+                        <div class="flex justify-between w-full p-3">
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('1')">1</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('2')">2</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('3')">3</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('+')">+</button>
+                        </div>
+                        <!-- fifth row of simple calculator -->
+                        <div class="flex justify-between w-full p-3">
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('0')">0</button>
+                            <button
+                                class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                                style="aspect-ratio: 1/1;" onclick="calculate('.')">.</button>
+                            <button
+                                class="shadow-md rounded-3xl bg-LemonChiffon hover:-translate-y-1 duration-500 ease-in"
+                                style="width: 46.667%;" onclick="calculate('=')">=</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- engineering calculator -->
-        <section id="engineeringCalc"></section>
+            </section>
+            <!-- engineering calculator -->
+
+            <section id="engineeringCalculatorDisplay"
+                class="rounded-r-xl h-72 w-96 m-0 mb-6 bg-white shadow-inner relative hidden transition duration-500 ease-in-out"
+                id="engineeringCalc">
+                <div class="w-full absolute transform translate-x-1/2 -translate-y-1/2 top-1/2 -left-1/2">
+                    <!-- first row of engineering calculator -->
+                    <div class="flex justify-between w-full py-3 px-5">
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">sin</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">cos</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="backspace()">tan</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">log</button>
+                    </div>
+                    <!-- second row of engineering calculator -->
+                    <div class="flex justify-between w-full py-3 px-5">
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">π</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">e</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">e<sup>x</sup></button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">ln</button>
+                    </div>
+                    <!-- third row of engineering calculator -->
+                    <div class="flex justify-between w-full py-3 px-5">
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">1/x</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">^</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">x!</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">&radic;</button>
+                    </div>
+                    <!-- fourth row of engineering calculator -->
+                    <div class="flex justify-between w-full py-3 px-5">
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">(</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">)</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">%</button>
+                        <button
+                            class="shadow-md rounded-full bg-SkyBlue w-1/5 hover:-translate-y-1 duration-500 ease-in"
+                            style="aspect-ratio: 2/1;" onclick="">Exp</button>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
