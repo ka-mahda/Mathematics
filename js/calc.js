@@ -23,7 +23,7 @@ document.addEventListener("keydown", function (event) {
     calculate("=");
   }
 });
-
+// clear functions
 function backspace() {
   equation = equation.slice(0, -1);
   result.value = equation;
@@ -33,7 +33,26 @@ function clearResult() {
   result.value = "";
   equation = "";
 }
+// plusMinus key
+/**
+ * Toggles the sign of the equation by adding or removing a negative sign at the beginning.
+ * If the equation starts with a negative sign, it is removed. Otherwise, a negative sign is added.
+ */
 
+function toggleSign() {
+  // Check if the equation starts with a negative sign
+  if (equation.startsWith("-")) {
+    // Remove the negative sign
+    equation = equation.slice(1);
+  } else {
+    // Add a negative sign
+    equation = "-" + equation;
+  }
+  // Update the field with the new equation
+  result.value = equation;
+}
+
+// calculate functions get one argument and check conditional statement
 function calculate(value) {
   if (value === "=") {
     try {
